@@ -1,3 +1,5 @@
+// rock paper scissors game
+
 const getComputerChoice = () => {
     const RPS = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * RPS.length);
