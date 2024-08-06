@@ -14,36 +14,30 @@ const playRound = () => {
     const player = getHumanChoice().toLowerCase();
     const computer = getComputerChoice();
     if (player === "rock" && computer === "rock") {
-        console.log("It's a tie!");
+        return 0;
     }
     else if (player === "paper" && computer === "paper") {
-        console.log("It's a tie!");
+        return 0;
     }
     else if (player === "scissors" && computer === "scissors") {
-        console.log("It's a tie!");
+        return 0;
     }
     else if (player === "paper" && computer === "rock") {
-        console.log("You won the round!");
         return 1;
     }
     else if (player === "paper" && computer === "scissors") {
-        console.log("You lost the round!");
         return 2;
     }
     else if (player === "rock" && computer === "scissors") {
-        console.log("You won the round!");
         return 1;
     }
     else if (player === "rock" && computer === "paper") {
-        console.log("You lost the round!");
         return 2;
     }
     else if (player === "scissors" && computer === "paper") {
-        console.log("You won the round!");
         return 1;
     }
     else if (player === "scissors" && computer === "rock") {
-        console.log("You lost the round!");
         return 2;
     }
 };
@@ -55,19 +49,28 @@ const playGame = () => {
         let score = playRound();
         if (score === 1) {
             humanScore++;
+            alert(`You won da round! \n Score: \n You: ${humanScore} \n Computer: ${computerScore}`);
         }
         else if (score === 2) {
             computerScore++;
+            alert(`You lost da round! \n Score: \n You: ${humanScore} \n Computer: ${computerScore}`);
         }
         else {
+            alert(`It's a tie! \n Score: \n You: ${humanScore} \n Computer: ${computerScore}`);
             i--;
+        }
+        if (humanScore === 3) {
+            break;
+        }
+        else if (computerScore === 3) {
+            break;
         }
     }
     if (humanScore > computerScore) {
-        console.log("You won da game!");
+        alert("You won da game!");
     }
     else {
-        console.log("You lost da game!");
+        alert("You lost da game!");
     }
 }
 
