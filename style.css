@@ -1,0 +1,20 @@
+h1, h2 {
+    text-align: center;
+}
+.container {
+    display: flex;
+    gap: 20px;
+}
+.human, .computer{
+    width: 50%;
+}
+.boxes-human {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.img-rps {
+    max-width: 100px;
+    max-height: 100px;
+}
