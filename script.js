@@ -1,28 +1,16 @@
 // rock paper scissors game
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+const computerName = document.querySelector("#computer-choice");
+const gameTitle = document.querySelector(".title");
+const human_score = document.querySelector("#human_score");
+const computer_score = document.querySelector("#computer_score");
+var humanScore = 0;
+var computerScore = 0;
 
-const getComputerChoice = () => {
-    const RPS = ["rock", "paper", "scissors"];
-    const randomIndex = Math.floor(Math.random() * RPS.length);
-    return RPS[randomIndex];
-};
-
-const getHumanChoice = () => {
-    return prompt("rock paper scissors");
-};
-
-const playRound = () => {
-    const player = getHumanChoice().toLowerCase();
-    const computer = getComputerChoice();
-    if (player === "rock" && computer === "rock") {
-        return 0;
-    }
-    else if (player === "paper" && computer === "paper") {
-        return 0;
-    }
-    else if (player === "scissors" && computer === "scissors") {
-        return 0;
-    }
-    else if (player === "paper" && computer === "rock") {
+const playRound = (player, computer) => {
+    if (player === "paper" && computer === "rock") {
         return 1;
     }
     else if (player === "paper" && computer === "scissors") {
@@ -42,36 +30,40 @@ const playRound = () => {
     }
 };
 
-const playGame = () => {
-    let humanScore = 0;
-    let computerScore = 0;
-    for (i = 0;i < 5;++i) {
-        let score = playRound();
+const playGame = (e) => {
+    if (humanScore < 3 && computerScore < 3) {
+        const humanChoice = e.target.getAttribute("class");
+        const computerChoice = getComputerChoice();
+        const score = playRound(humanChoice, computerChoice);
         if (score === 1) {
             humanScore++;
-            alert(`You won da round! \n Score: \n You: ${humanScore} \n Computer: ${computerScore}`);
+            gameTitle.textContent = `You won da round!`;
+            human_score.textContent = `human: ${humanScore}`;
         }
         else if (score === 2) {
             computerScore++;
-            alert(`You lost da round! \n Score: \n You: ${humanScore} \n Computer: ${computerScore}`);
+            gameTitle.textContent = `You lost da round!`
+            computer_score.textContent = `computer: ${computerScore}`;
         }
         else {
-            alert(`It's a tie! \n Score: \n You: ${humanScore} \n Computer: ${computerScore}`);
-            i--;
+            gameTitle.textContent = `It's a tie!`
         }
+        computerName.textContent = computerChoice;
         if (humanScore === 3) {
-            break;
+            gameTitle.textContent = "You won the game! :)))";
         }
         else if (computerScore === 3) {
-            break;
+            gameTitle.textContent = "You lost the game! :(((";
         }
-    }
-    if (humanScore > computerScore) {
-        alert("You won da game!");
-    }
-    else {
-        alert("You lost da game!");
     }
 }
 
-playGame();
+const getComputerChoice = () => {
+    const RPS = ["rock", "paper", "scissors"];
+    const randomIndex = Math.floor(Math.random() * RPS.length);
+    return RPS[randomIndex];
+};
+
+rock.addEventListener("click", playGame);
+paper.addEventListener("click", playGame);
+scissors.addEventListener("click", playGame);

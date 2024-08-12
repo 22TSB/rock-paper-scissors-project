@@ -8,13 +8,19 @@ h1, h2 {
 .human, .computer{
     width: 50%;
 }
-.boxes-human {
+.boxes-human, .box-random-computer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
 }
-.img-rps {
-    max-width: 100px;
-    max-height: 100px;
+.title-computer {
+    margin-top: 40px;
+}
+.rock, .paper, .scissors, .random {
+    width: 100px;
+    height: 100px;
+}
+.rock, .paper, .scissors:hover {
+    cursor: pointer;
 }
