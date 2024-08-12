@@ -8,6 +8,9 @@ const human_score = document.querySelector("#human_score");
 const computer_score = document.querySelector("#computer_score");
 var humanScore = 0;
 var computerScore = 0;
+const btn = document.createElement("button");
+btn.textContent = "Reset";
+btn.setAttribute("class", "btn");
 
 const playRound = (player, computer) => {
     if (player === "paper" && computer === "rock") {
@@ -37,23 +40,25 @@ const playGame = (e) => {
         const score = playRound(humanChoice, computerChoice);
         if (score === 1) {
             humanScore++;
-            gameTitle.textContent = `You won da round!`;
+            gameTitle.lastElementChild.textContent = `You won da round!`;
             human_score.textContent = `human: ${humanScore}`;
         }
         else if (score === 2) {
             computerScore++;
-            gameTitle.textContent = `You lost da round!`
+            gameTitle.lastElementChild.textContent = `You lost da round!`
             computer_score.textContent = `computer: ${computerScore}`;
         }
         else {
-            gameTitle.textContent = `It's a tie!`
+            gameTitle.lastElementChild.textContent = `It's a tie!`
         }
         computerName.textContent = computerChoice;
         if (humanScore === 3) {
-            gameTitle.textContent = "You won the game! :)))";
+            gameTitle.lastElementChild.textContent = "You won the game! :)))";
+            gameTitle.appendChild(btn);
         }
         else if (computerScore === 3) {
-            gameTitle.textContent = "You lost the game! :(((";
+            gameTitle.lastElementChild.textContent = "You lost the game! :(((";
+            gameTitle.appendChild(btn);
         }
     }
 }
@@ -64,6 +69,16 @@ const getComputerChoice = () => {
     return RPS[randomIndex];
 };
 
+const resetFunction = () => {
+    computerScore = 0;
+    humanScore = 0;
+    gameTitle.removeChild(btn);
+    gameTitle.lastElementChild.textContent = "click on the item to start";
+    human_score.textContent = "human";
+    computer_score.textContent = "computer";
+}
+
 rock.addEventListener("click", playGame);
 paper.addEventListener("click", playGame);
 scissors.addEventListener("click", playGame);
+btn.addEventListener("click", resetFunction);
