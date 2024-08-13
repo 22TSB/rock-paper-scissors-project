@@ -49,11 +49,11 @@ const playGame = (e) => {
         const score = playRound(humanChoice, computerChoice);
         if (computerChoice === "scissors") {
             DOM_computerChoice.src = `src/${computerChoice}.webp`;
-            DOM_computerChoice.setAttribute("class", computerChoice);
+            DOM_computerChoice.setAttribute("class", `${computerChoice}_cmpt`);
         }
         else {
             DOM_computerChoice.src = `src/${computerChoice}.jpg`;
-            DOM_computerChoice.setAttribute("class", computerChoice); 
+            DOM_computerChoice.setAttribute("class", `${computerChoice}_cmpt`); 
         }
         if (score === 1) {
             humanScore++;

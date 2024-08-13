@@ -26,11 +26,14 @@ h1, h2 {
 .title-computer {
     margin-top: 40px;
 }
-.rock, .paper, .scissors, .random {
+.rock, .paper, .scissors, .random, .rock_cmpt, .paper_cmpt, .scissors_cmpt {
     width: 100px;
     height: 100px;
 }
 .random {
+    cursor: not-allowed;
+}
+.rock_cmpt, .paper_cmpt, .scissors_cmpt:hover {
     cursor: not-allowed;
 }
 .rock, .paper, .scissors:hover {
