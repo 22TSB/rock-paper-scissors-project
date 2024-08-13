@@ -30,6 +30,9 @@ h1, h2 {
     width: 100px;
     height: 100px;
 }
+.random {
+    cursor: not-allowed;
+}
 .rock, .paper, .scissors:hover {
     cursor: pointer;
 }
