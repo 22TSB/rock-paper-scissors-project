@@ -4,6 +4,7 @@ const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const computerName = document.querySelector("#computer-choice");
 const gameTitle = document.querySelector(".title");
+const resetBtn = document.querySelector(".title_btn");
 const human_score = document.querySelector("#human_score");
 const computer_score = document.querySelector("#computer_score");
 var humanScore = 0;
@@ -54,13 +55,13 @@ const playGame = (e) => {
         computerName.textContent = computerChoice;
         if (humanScore === 3) {
             gameTitle.lastElementChild.textContent = "You won the game! :)))";
-            gameTitle.appendChild(btn);
+            resetBtn.appendChild(btn);
         }
         else if (computerScore === 3) {
             gameTitle.lastElementChild.textContent = "You lost the game! :(((";
-            gameTitle.appendChild(btn);
+            resetBtn.appendChild(btn);
         }
-    }
+    }   
 }
 
 const getComputerChoice = () => {
@@ -72,7 +73,7 @@ const getComputerChoice = () => {
 const resetFunction = () => {
     computerScore = 0;
     humanScore = 0;
-    gameTitle.removeChild(btn);
+    resetBtn.removeChild(btn);
     gameTitle.lastElementChild.textContent = "click on the item to start";
     human_score.textContent = "human";
     computer_score.textContent = "computer";
