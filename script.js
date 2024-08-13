@@ -15,7 +15,6 @@ var DOM_RANDOM = document.createElement("img");
 DOM_RANDOM.src = "src/questionmark.png";
 DOM_RANDOM.setAttribute("class", "random");
 
-
 var humanScore = 0;
 var computerScore = 0;
 const btn = document.createElement("button");
