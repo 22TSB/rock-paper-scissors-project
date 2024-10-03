@@ -92,14 +92,29 @@ h2 {
 
 /* media query */
 
-@media only screen and (max-width: 595px) {
+@media only screen and (max-width: 859px) {
     .container {
         flex-direction: column;
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 459px) {
     .container {
-        padding: 0px 20px 0px 20px;
+        padding: 0px 8px 0px 8px;
+    }
+    .rock,
+    .paper,
+    .scissors,
+    .rock_cmpt,
+    .paper_cmpt,
+    .scissors_cmpt {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    .container {
+        padding: 0px;
     }
 }
