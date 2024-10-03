@@ -1,44 +1,80 @@
-h1, h2 {
+* {
+    margin: 0;
+}
+
+h1,
+h2 {
     text-align: center;
 }
+
 .title {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .title_btn {
     display: flex;
     justify-content: center;
 }
+
 .container {
     display: flex;
     gap: 20px;
+    padding: 0px 40px 0px 40px;
 }
-.human, .computer{
-    width: 50%;
+
+.human,
+.computer {
+    flex: 1;
 }
-.boxes-human, .box-random-computer {
+
+.human {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+.boxes-human,
+.box-random-computer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
 }
+
 .title-computer {
     margin-top: 40px;
 }
-.rock, .paper, .scissors, .random, .rock_cmpt, .paper_cmpt, .scissors_cmpt {
+
+.rock,
+.paper,
+.scissors,
+.random,
+.rock_cmpt,
+.paper_cmpt,
+.scissors_cmpt {
     width: 100px;
     height: 100px;
 }
+
 .random {
     cursor: not-allowed;
 }
-.rock_cmpt, .paper_cmpt, .scissors_cmpt:hover {
+
+.rock_cmpt,
+.paper_cmpt,
+.scissors_cmpt:hover {
     cursor: not-allowed;
 }
-.rock, .paper, .scissors:hover {
+
+.rock,
+.paper,
+.scissors:hover {
     cursor: pointer;
 }
+
 .btn {
     background-color: rgba(255, 0, 0, 0.8);
     color: white;
@@ -49,6 +85,21 @@ h1, h2 {
     max-width: 200px;
     padding: 20px 40px 20px 40px;
 }
+
 .btn:hover {
     cursor: pointer;
+}
+
+/* media query */
+
+@media only screen and (max-width: 595px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container {
+        padding: 0px 20px 0px 20px;
+    }
 }

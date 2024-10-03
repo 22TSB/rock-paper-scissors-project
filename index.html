@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="title">
-        <h1>I don have time to waste</h1> 
-        <h1>rock paper scissors</h1>
-        <h1>click on the item to start</h1>
-    </div>
-    <div class="title_btn">
-
-    </div>
-    <div class="container">
-        <div class="human">
-            <h1 id="human_score">human</h1>
-            <div class="boxes-human">
-                <div class="box-rock-human">
-                    <h2>rock</h2>
-                    <div>
-                        <img class="rock" src="src/rock.jpg">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="title">
+            <h1>rock paper scissors</h1>
+            <h1>click on the item to start</h1>
+        </div>
+        <div class="title_btn"></div>
+        <div class="container">
+            <div class="human">
+                <h1 id="human_score">human</h1>
+                <div class="boxes-human">
+                    <div class="box-rock-human">
+                        <h2>rock</h2>
+                        <div>
+                            <img class="rock" src="src/rock.jpg" />
+                        </div>
+                    </div>
+                    <div class="box-paper-human">
+                        <h2>paper</h2>
+                        <div>
+                            <img class="paper" src="src/paper.jpg" />
+                        </div>
+                    </div>
+                    <div class="box-scissors-human">
+                        <h2>scissors</h2>
+                        <div>
+                            <img class="scissors" src="src/scissors.webp" />
+                        </div>
                     </div>
                 </div>
-                <div class="box-paper-human">
-                    <h2>paper</h2>
-                    <div>
-                        <img class="paper" src="src/paper.jpg">
-                    </div>
-                </div>
-                <div class="box-scissors-human">
-                    <h2>scissors</h2>
-                    <div>
-                        <img class="scissors" src="src/scissors.webp">
+            </div>
+            <div class="computer">
+                <h1 id="computer_score">computer</h1>
+                <div class="box-computer">
+                    <div class="title-computer">
+                        <h2 id="computer-choice">random</h2>
+                        <div class="box-random-computer">
+                            <img class="random" src="src/questionmark.png" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="computer">
-            <h1 id="computer_score">computer</h1>
-            <div class="box-computer">
-                <div class="title-computer">
-                    <h2 id="computer-choice">random</h2>
-                    <div class="box-random-computer">
-                        <img class="random" src="src/questionmark.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
