@@ -8,15 +8,14 @@ const resetBtn = document.querySelector('.title_btn');
 const human_score = document.querySelector('#human_score');
 const computer_score = document.querySelector('#computer_score');
 const computerLogo = document.querySelector('.box-random-computer');
-
-var DOM_computerChoice = document.createElement('img');
-var DOM_RANDOM = document.createElement('img');
+const DOM_computerChoice = document.createElement('img');
+const DOM_RANDOM = document.createElement('img');
 
 DOM_RANDOM.src = 'src/questionmark.png';
 DOM_RANDOM.setAttribute('class', 'random');
 
-var humanScore = 0;
-var computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 const btn = document.createElement('button');
 btn.textContent = 'Reset';
 btn.setAttribute('class', 'btn');
